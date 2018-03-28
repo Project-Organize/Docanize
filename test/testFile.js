@@ -1,4 +1,11 @@
-//@docanize @function --description : 'Testing Function'
-function testFunc() {
+function named(name, classed) {
+
+}
+
+function def(avc) {
+
+}
+
+const named = (asd,cs)=>{
 
 }

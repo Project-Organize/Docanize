@@ -1,2 +1,2 @@
 # Docanize
-Generate JSDoc Style Comments for all your js/ts files with one command.
+Automatically generate jsdoc style comments for your code to make documentation generation easier. 

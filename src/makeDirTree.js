@@ -43,7 +43,7 @@ async function makeDirTree() {
             dirTree[activeDir.name] = activeDir;
         }
         dirTree = dirTree.root;
-        res(AllFiles);
+        res([dirTree, AllFiles]);
     })
 }
 
@@ -81,14 +81,17 @@ function walkTree(dirPath) {
                         file = {
                             id: id,
                             name: i,
+                            extension: `${i.substring(i.lastIndexOf('.')+1)}`,
                             type: 'file',
                             path: `${relative}${i}`,
                             imports: [],
                             exports: []
                         }
-                        AllFiles[id++] = file;
+                        if (file.name !== 'tree.json')
+                            AllFiles[id++] = file;
                     }
-                    filesindir.push(file);
+                    if (file.name !== 'tree.json')
+                        filesindir.push(file);
                 })
                 res(filesindir);
             })
